@@ -1,0 +1,1512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax21="http://sql.java/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://webservice" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://sql.java/xsd">
+      <xs:complexType name="SQLException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SQLState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+          <xs:element minOccurs="0" name="nextException" nillable="true" type="ax21:SQLException" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax22="http://sql.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://webservice">
+      <xs:import namespace="http://sql.java/xsd" />
+      <xs:element name="WS_UpdateUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strDisplayName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="bolisMale" type="xs:boolean" />
+            <xs:element minOccurs="0" name="strCell" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strEMail" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPassword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="photo" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="strOldPwd" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strBirthday" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strAddSecCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strCommunityCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddMemberPlan">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="bolisMale" type="xs:boolean" />
+            <xs:element minOccurs="0" name="floHeight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="datStartdate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datEnddate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="floFtweight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTgweight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floFtBodyFat" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTgBodyFat" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floFtWaistline" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTgWaistline" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floFtButtocks" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTgButtocks" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intSportCount" type="xs:int" />
+            <xs:element minOccurs="0" name="intSportOneMin" type="xs:int" />
+            <xs:element minOccurs="0" name="datBreakfristST" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datBreakfristET" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datLunchST" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datLunchET" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datDinnerST" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datDinnerET" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datForbiddenST1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datForbiddenET1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datForbiddenST2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datForbiddenET2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intActivity" type="xs:int" />
+            <xs:element minOccurs="0" name="intReducingCalorie" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddMemberPlanResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AntiFatSQLException">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SQLException" nillable="true" type="ax22:SQLException" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_GetUv">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="hospital" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="recno" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_GetUvResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddBloodSugar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intConsistency" type="xs:int" />
+            <xs:element minOccurs="0" name="intTypeID" type="xs:int" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddBloodSugarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddDietRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intDietType" type="xs:int" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="img1" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img2" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img3" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img4" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img5" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img6" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img7" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img8" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img9" nillable="true" type="xs:base64Binary" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddDietRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_SignUpload">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="hospital" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="signId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="photo" nillable="true" type="xs:base64Binary" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_SignUploadResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_CreateNewUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strDisplayName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="bolisMale" type="xs:boolean" />
+            <xs:element minOccurs="0" name="bolisAgreement" type="xs:boolean" />
+            <xs:element minOccurs="0" name="strCell" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strEMail" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPassword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="photo" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="strBirthday" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strAddSecCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strCommunityCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intUserID" nillable="true" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_CreateNewUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddDxPatch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="HR" type="xs:int" />
+            <xs:element minOccurs="0" name="S3" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="S4" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="EMAT" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="SDI" nillable="true" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddDxPatchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddBloodSugar2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intConsistency" type="xs:int" />
+            <xs:element minOccurs="0" name="floUricAcid" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floCholesterol" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intTypeID" type="xs:int" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddBloodSugar2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateWeightRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="floWeight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floBodyFat" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floWaistline" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floButtocks" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floRateOfBone" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floSoftLeanMass" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTotalBodyWater" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateWeightRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateBloodSugar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intConsistency" type="xs:int" />
+            <xs:element minOccurs="0" name="intTypeID" type="xs:int" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateBloodSugarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateSportImageRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intSportType" type="xs:int" />
+            <xs:element minOccurs="0" name="intSportMinutes" type="xs:int" />
+            <xs:element minOccurs="0" name="dubDistance" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intFootSteps" type="xs:int" />
+            <xs:element minOccurs="0" name="intCalorie" type="xs:int" />
+            <xs:element minOccurs="0" name="strAutoMeasure" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="img1" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img2" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img3" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img4" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img5" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img6" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img7" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img8" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img9" nillable="true" type="xs:base64Binary" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateSportImageRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddBloodRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intSystolic" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intDiastolic" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intPulse" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intTypeID" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddBloodRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddSportImageRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intSportType" type="xs:int" />
+            <xs:element minOccurs="0" name="intSportMinutes" type="xs:int" />
+            <xs:element minOccurs="0" name="dubDistance" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intFootSteps" type="xs:int" />
+            <xs:element minOccurs="0" name="intCalorie" type="xs:int" />
+            <xs:element minOccurs="0" name="strAutoMeasure" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="img1" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img2" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img3" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img4" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img5" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img6" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img7" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img8" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img9" nillable="true" type="xs:base64Binary" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddSportImageRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddRingRecords">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intSportType" type="xs:int" />
+            <xs:element minOccurs="0" name="strRecordData" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strAutoMeasure" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strStoredRecords" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddRingRecordsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddSleepRecords">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datStartTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datEndTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intDeepMinutes" type="xs:int" />
+            <xs:element minOccurs="0" name="intLightMinutes" type="xs:int" />
+            <xs:element minOccurs="0" name="strSleepRawData" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddSleepRecordsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateMemberPlan">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="bolisMale" type="xs:boolean" />
+            <xs:element minOccurs="0" name="floHeight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="datStartdate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datEnddate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="floFtweight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTgweight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floFtBodyFat" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTgBodyFat" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floFtWaistline" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTgWaistline" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floFtButtocks" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTgButtocks" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intSportCount" type="xs:int" />
+            <xs:element minOccurs="0" name="intSportOneMin" type="xs:int" />
+            <xs:element minOccurs="0" name="datBreakfristST" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datBreakfristET" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datLunchST" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datLunchET" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datDinnerST" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datDinnerET" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datForbiddenST1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datForbiddenET1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datForbiddenST2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datForbiddenET2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intActivity" type="xs:int" />
+            <xs:element minOccurs="0" name="intReducingCalorie" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateMemberPlanResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateBloodRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intSystolic" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intDiastolic" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intPulse" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intTypeID" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateBloodRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddWeightRecord2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="floWeight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floBodyFat" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floWaistline" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floButtocks" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floRateOfBone" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floSoftLeanMass" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTotalBodyWater" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floHeight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floBMI" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddWeightRecord2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddWeightRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="floWeight" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floBodyFat" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floWaistline" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floButtocks" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floRateOfBone" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floSoftLeanMass" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="floTotalBodyWater" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddWeightRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddForeheadTemperature">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="floatTemperature" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intUnit" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddForeheadTemperatureResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddEarTemperature">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="floatTemperature" nillable="true" type="xs:decimal" />
+            <xs:element minOccurs="0" name="intUnit" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_AddEarTemperatureResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateDietRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strPrgID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strPrgPws" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strUserPassWord" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intServerID" type="xs:int" />
+            <xs:element minOccurs="0" name="datRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datUpdateRecordTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="intDietType" type="xs:int" />
+            <xs:element minOccurs="0" name="strMemo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="img1" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img2" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img3" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img4" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img5" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img6" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img7" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img8" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="img9" nillable="true" type="xs:base64Binary" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WS_UpdateDietRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="WS_AddDxPatchRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddDxPatch" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddDxPatchResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddDxPatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddWeightRecord2Request">
+    <wsdl:part name="parameters" element="ns:WS_AddWeightRecord2" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddWeightRecord2Response">
+    <wsdl:part name="parameters" element="ns:WS_AddWeightRecord2Response" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddRingRecordsRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddRingRecords" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddRingRecordsResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddRingRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddMemberPlanRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddMemberPlan" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddMemberPlanResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddMemberPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateMemberPlanRequest">
+    <wsdl:part name="parameters" element="ns:WS_UpdateMemberPlan" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateMemberPlanResponse">
+    <wsdl:part name="parameters" element="ns:WS_UpdateMemberPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateDietRecordRequest">
+    <wsdl:part name="parameters" element="ns:WS_UpdateDietRecord" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateDietRecordResponse">
+    <wsdl:part name="parameters" element="ns:WS_UpdateDietRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddDietRecordRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddDietRecord" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddDietRecordResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddDietRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddBloodSugarRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddBloodSugar" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddBloodSugarResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddBloodSugarResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddSleepRecordsRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddSleepRecords" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddSleepRecordsResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddSleepRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CreateNewUserRequest">
+    <wsdl:part name="parameters" element="ns:WS_CreateNewUser" />
+  </wsdl:message>
+  <wsdl:message name="WS_CreateNewUserResponse">
+    <wsdl:part name="parameters" element="ns:WS_CreateNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddEarTemperatureRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddEarTemperature" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddEarTemperatureResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddEarTemperatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateWeightRecordRequest">
+    <wsdl:part name="parameters" element="ns:WS_UpdateWeightRecord" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateWeightRecordResponse">
+    <wsdl:part name="parameters" element="ns:WS_UpdateWeightRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddWeightRecordRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddWeightRecord" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddWeightRecordResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddWeightRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_SignUploadRequest">
+    <wsdl:part name="parameters" element="ns:WS_SignUpload" />
+  </wsdl:message>
+  <wsdl:message name="WS_SignUploadResponse">
+    <wsdl:part name="parameters" element="ns:WS_SignUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_GetUvRequest">
+    <wsdl:part name="parameters" element="ns:WS_GetUv" />
+  </wsdl:message>
+  <wsdl:message name="WS_GetUvResponse">
+    <wsdl:part name="parameters" element="ns:WS_GetUvResponse" />
+  </wsdl:message>
+  <wsdl:message name="AntiFatSQLException">
+    <wsdl:part name="parameters" element="ns:AntiFatSQLException" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateBloodSugarRequest">
+    <wsdl:part name="parameters" element="ns:WS_UpdateBloodSugar" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateBloodSugarResponse">
+    <wsdl:part name="parameters" element="ns:WS_UpdateBloodSugarResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddSportImageRecordRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddSportImageRecord" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddSportImageRecordResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddSportImageRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddForeheadTemperatureRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddForeheadTemperature" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddForeheadTemperatureResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddForeheadTemperatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateBloodRecordRequest">
+    <wsdl:part name="parameters" element="ns:WS_UpdateBloodRecord" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateBloodRecordResponse">
+    <wsdl:part name="parameters" element="ns:WS_UpdateBloodRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateUserRequest">
+    <wsdl:part name="parameters" element="ns:WS_UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateUserResponse">
+    <wsdl:part name="parameters" element="ns:WS_UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddBloodRecordRequest">
+    <wsdl:part name="parameters" element="ns:WS_AddBloodRecord" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddBloodRecordResponse">
+    <wsdl:part name="parameters" element="ns:WS_AddBloodRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddBloodSugar2Request">
+    <wsdl:part name="parameters" element="ns:WS_AddBloodSugar2" />
+  </wsdl:message>
+  <wsdl:message name="WS_AddBloodSugar2Response">
+    <wsdl:part name="parameters" element="ns:WS_AddBloodSugar2Response" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateSportImageRecordRequest">
+    <wsdl:part name="parameters" element="ns:WS_UpdateSportImageRecord" />
+  </wsdl:message>
+  <wsdl:message name="WS_UpdateSportImageRecordResponse">
+    <wsdl:part name="parameters" element="ns:WS_UpdateSportImageRecordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AntiFatPortType">
+    <wsdl:operation name="WS_AddDxPatch">
+      <wsdl:input wsaw:Action="urn:WS_AddDxPatch" message="ns:WS_AddDxPatchRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddDxPatchResponse" message="ns:WS_AddDxPatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddWeightRecord2">
+      <wsdl:input wsaw:Action="urn:WS_AddWeightRecord2" message="ns:WS_AddWeightRecord2Request" />
+      <wsdl:output wsaw:Action="urn:WS_AddWeightRecord2Response" message="ns:WS_AddWeightRecord2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddRingRecords">
+      <wsdl:input wsaw:Action="urn:WS_AddRingRecords" message="ns:WS_AddRingRecordsRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddRingRecordsResponse" message="ns:WS_AddRingRecordsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddMemberPlan">
+      <wsdl:input wsaw:Action="urn:WS_AddMemberPlan" message="ns:WS_AddMemberPlanRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddMemberPlanResponse" message="ns:WS_AddMemberPlanResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateMemberPlan">
+      <wsdl:input wsaw:Action="urn:WS_UpdateMemberPlan" message="ns:WS_UpdateMemberPlanRequest" />
+      <wsdl:output wsaw:Action="urn:WS_UpdateMemberPlanResponse" message="ns:WS_UpdateMemberPlanResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateDietRecord">
+      <wsdl:input wsaw:Action="urn:WS_UpdateDietRecord" message="ns:WS_UpdateDietRecordRequest" />
+      <wsdl:output wsaw:Action="urn:WS_UpdateDietRecordResponse" message="ns:WS_UpdateDietRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddDietRecord">
+      <wsdl:input wsaw:Action="urn:WS_AddDietRecord" message="ns:WS_AddDietRecordRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddDietRecordResponse" message="ns:WS_AddDietRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodSugar">
+      <wsdl:input wsaw:Action="urn:WS_AddBloodSugar" message="ns:WS_AddBloodSugarRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddBloodSugarResponse" message="ns:WS_AddBloodSugarResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddSleepRecords">
+      <wsdl:input wsaw:Action="urn:WS_AddSleepRecords" message="ns:WS_AddSleepRecordsRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddSleepRecordsResponse" message="ns:WS_AddSleepRecordsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CreateNewUser">
+      <wsdl:input wsaw:Action="urn:WS_CreateNewUser" message="ns:WS_CreateNewUserRequest" />
+      <wsdl:output wsaw:Action="urn:WS_CreateNewUserResponse" message="ns:WS_CreateNewUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddEarTemperature">
+      <wsdl:input wsaw:Action="urn:WS_AddEarTemperature" message="ns:WS_AddEarTemperatureRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddEarTemperatureResponse" message="ns:WS_AddEarTemperatureResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateWeightRecord">
+      <wsdl:input wsaw:Action="urn:WS_UpdateWeightRecord" message="ns:WS_UpdateWeightRecordRequest" />
+      <wsdl:output wsaw:Action="urn:WS_UpdateWeightRecordResponse" message="ns:WS_UpdateWeightRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddWeightRecord">
+      <wsdl:input wsaw:Action="urn:WS_AddWeightRecord" message="ns:WS_AddWeightRecordRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddWeightRecordResponse" message="ns:WS_AddWeightRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_SignUpload">
+      <wsdl:input wsaw:Action="urn:WS_SignUpload" message="ns:WS_SignUploadRequest" />
+      <wsdl:output wsaw:Action="urn:WS_SignUploadResponse" message="ns:WS_SignUploadResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_GetUv">
+      <wsdl:input wsaw:Action="urn:WS_GetUv" message="ns:WS_GetUvRequest" />
+      <wsdl:output wsaw:Action="urn:WS_GetUvResponse" message="ns:WS_GetUvResponse" />
+      <wsdl:fault wsaw:Action="urn:WS_GetUvAntiFatSQLException" name="AntiFatSQLException" message="ns:AntiFatSQLException" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateBloodSugar">
+      <wsdl:input wsaw:Action="urn:WS_UpdateBloodSugar" message="ns:WS_UpdateBloodSugarRequest" />
+      <wsdl:output wsaw:Action="urn:WS_UpdateBloodSugarResponse" message="ns:WS_UpdateBloodSugarResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddSportImageRecord">
+      <wsdl:input wsaw:Action="urn:WS_AddSportImageRecord" message="ns:WS_AddSportImageRecordRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddSportImageRecordResponse" message="ns:WS_AddSportImageRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddForeheadTemperature">
+      <wsdl:input wsaw:Action="urn:WS_AddForeheadTemperature" message="ns:WS_AddForeheadTemperatureRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddForeheadTemperatureResponse" message="ns:WS_AddForeheadTemperatureResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateBloodRecord">
+      <wsdl:input wsaw:Action="urn:WS_UpdateBloodRecord" message="ns:WS_UpdateBloodRecordRequest" />
+      <wsdl:output wsaw:Action="urn:WS_UpdateBloodRecordResponse" message="ns:WS_UpdateBloodRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateUser">
+      <wsdl:input wsaw:Action="urn:WS_UpdateUser" message="ns:WS_UpdateUserRequest" />
+      <wsdl:output wsaw:Action="urn:WS_UpdateUserResponse" message="ns:WS_UpdateUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodRecord">
+      <wsdl:input wsaw:Action="urn:WS_AddBloodRecord" message="ns:WS_AddBloodRecordRequest" />
+      <wsdl:output wsaw:Action="urn:WS_AddBloodRecordResponse" message="ns:WS_AddBloodRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodSugar2">
+      <wsdl:input wsaw:Action="urn:WS_AddBloodSugar2" message="ns:WS_AddBloodSugar2Request" />
+      <wsdl:output wsaw:Action="urn:WS_AddBloodSugar2Response" message="ns:WS_AddBloodSugar2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateSportImageRecord">
+      <wsdl:input wsaw:Action="urn:WS_UpdateSportImageRecord" message="ns:WS_UpdateSportImageRecordRequest" />
+      <wsdl:output wsaw:Action="urn:WS_UpdateSportImageRecordResponse" message="ns:WS_UpdateSportImageRecordResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AntiFatSoap11Binding" type="ns:AntiFatPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_AddDxPatch">
+      <soap:operation soapAction="urn:WS_AddDxPatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddWeightRecord2">
+      <soap:operation soapAction="urn:WS_AddWeightRecord2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddRingRecords">
+      <soap:operation soapAction="urn:WS_AddRingRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddMemberPlan">
+      <soap:operation soapAction="urn:WS_AddMemberPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateMemberPlan">
+      <soap:operation soapAction="urn:WS_UpdateMemberPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateDietRecord">
+      <soap:operation soapAction="urn:WS_UpdateDietRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddDietRecord">
+      <soap:operation soapAction="urn:WS_AddDietRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodSugar">
+      <soap:operation soapAction="urn:WS_AddBloodSugar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddSleepRecords">
+      <soap:operation soapAction="urn:WS_AddSleepRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CreateNewUser">
+      <soap:operation soapAction="urn:WS_CreateNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddEarTemperature">
+      <soap:operation soapAction="urn:WS_AddEarTemperature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateWeightRecord">
+      <soap:operation soapAction="urn:WS_UpdateWeightRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddWeightRecord">
+      <soap:operation soapAction="urn:WS_AddWeightRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_SignUpload">
+      <soap:operation soapAction="urn:WS_SignUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GetUv">
+      <soap:operation soapAction="urn:WS_GetUv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AntiFatSQLException">
+        <soap:fault use="literal" name="AntiFatSQLException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateBloodSugar">
+      <soap:operation soapAction="urn:WS_UpdateBloodSugar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddSportImageRecord">
+      <soap:operation soapAction="urn:WS_AddSportImageRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddForeheadTemperature">
+      <soap:operation soapAction="urn:WS_AddForeheadTemperature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateBloodRecord">
+      <soap:operation soapAction="urn:WS_UpdateBloodRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateUser">
+      <soap:operation soapAction="urn:WS_UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodRecord">
+      <soap:operation soapAction="urn:WS_AddBloodRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodSugar2">
+      <soap:operation soapAction="urn:WS_AddBloodSugar2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateSportImageRecord">
+      <soap:operation soapAction="urn:WS_UpdateSportImageRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AntiFatSoap12Binding" type="ns:AntiFatPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_AddDxPatch">
+      <soap12:operation soapAction="urn:WS_AddDxPatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddWeightRecord2">
+      <soap12:operation soapAction="urn:WS_AddWeightRecord2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddRingRecords">
+      <soap12:operation soapAction="urn:WS_AddRingRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddMemberPlan">
+      <soap12:operation soapAction="urn:WS_AddMemberPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateMemberPlan">
+      <soap12:operation soapAction="urn:WS_UpdateMemberPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateDietRecord">
+      <soap12:operation soapAction="urn:WS_UpdateDietRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddDietRecord">
+      <soap12:operation soapAction="urn:WS_AddDietRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodSugar">
+      <soap12:operation soapAction="urn:WS_AddBloodSugar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddSleepRecords">
+      <soap12:operation soapAction="urn:WS_AddSleepRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CreateNewUser">
+      <soap12:operation soapAction="urn:WS_CreateNewUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddEarTemperature">
+      <soap12:operation soapAction="urn:WS_AddEarTemperature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateWeightRecord">
+      <soap12:operation soapAction="urn:WS_UpdateWeightRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddWeightRecord">
+      <soap12:operation soapAction="urn:WS_AddWeightRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_SignUpload">
+      <soap12:operation soapAction="urn:WS_SignUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GetUv">
+      <soap12:operation soapAction="urn:WS_GetUv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AntiFatSQLException">
+        <soap12:fault use="literal" name="AntiFatSQLException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateBloodSugar">
+      <soap12:operation soapAction="urn:WS_UpdateBloodSugar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddSportImageRecord">
+      <soap12:operation soapAction="urn:WS_AddSportImageRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddForeheadTemperature">
+      <soap12:operation soapAction="urn:WS_AddForeheadTemperature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateBloodRecord">
+      <soap12:operation soapAction="urn:WS_UpdateBloodRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateUser">
+      <soap12:operation soapAction="urn:WS_UpdateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodRecord">
+      <soap12:operation soapAction="urn:WS_AddBloodRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodSugar2">
+      <soap12:operation soapAction="urn:WS_AddBloodSugar2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateSportImageRecord">
+      <soap12:operation soapAction="urn:WS_UpdateSportImageRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AntiFatHttpBinding" type="ns:AntiFatPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="WS_AddDxPatch">
+      <http:operation location="WS_AddDxPatch" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddWeightRecord2">
+      <http:operation location="WS_AddWeightRecord2" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddRingRecords">
+      <http:operation location="WS_AddRingRecords" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddMemberPlan">
+      <http:operation location="WS_AddMemberPlan" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateMemberPlan">
+      <http:operation location="WS_UpdateMemberPlan" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateDietRecord">
+      <http:operation location="WS_UpdateDietRecord" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddDietRecord">
+      <http:operation location="WS_AddDietRecord" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodSugar">
+      <http:operation location="WS_AddBloodSugar" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddSleepRecords">
+      <http:operation location="WS_AddSleepRecords" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CreateNewUser">
+      <http:operation location="WS_CreateNewUser" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddEarTemperature">
+      <http:operation location="WS_AddEarTemperature" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateWeightRecord">
+      <http:operation location="WS_UpdateWeightRecord" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddWeightRecord">
+      <http:operation location="WS_AddWeightRecord" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_SignUpload">
+      <http:operation location="WS_SignUpload" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_GetUv">
+      <http:operation location="WS_GetUv" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateBloodSugar">
+      <http:operation location="WS_UpdateBloodSugar" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddSportImageRecord">
+      <http:operation location="WS_AddSportImageRecord" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddForeheadTemperature">
+      <http:operation location="WS_AddForeheadTemperature" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateBloodRecord">
+      <http:operation location="WS_UpdateBloodRecord" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateUser">
+      <http:operation location="WS_UpdateUser" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodRecord">
+      <http:operation location="WS_AddBloodRecord" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_AddBloodSugar2">
+      <http:operation location="WS_AddBloodSugar2" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UpdateSportImageRecord">
+      <http:operation location="WS_UpdateSportImageRecord" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AntiFat">
+    <wsdl:port name="AntiFatHttpSoap11Endpoint" binding="ns:AntiFatSoap11Binding">
+      <soap:address location="http://cloud.weightobserver.com.tw:8080/WebService/services/AntiFat.AntiFatHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="AntiFatHttpSoap12Endpoint" binding="ns:AntiFatSoap12Binding">
+      <soap12:address location="http://cloud.weightobserver.com.tw:8080/WebService/services/AntiFat.AntiFatHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="AntiFatHttpEndpoint" binding="ns:AntiFatHttpBinding">
+      <http:address location="http://cloud.weightobserver.com.tw:8080/WebService/services/AntiFat.AntiFatHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

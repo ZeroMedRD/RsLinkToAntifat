@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="kn3534012062Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'kn3534012062.dbo.area_basic' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="area_basic">
+          <Key>
+            <PropertyRef Name="cityarea" />
+            <PropertyRef Name="zipcode" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="area" />
+            <PropertyRef Name="ecity" />
+            <PropertyRef Name="earea" />
+          </Key>
+          <Property Name="cityarea" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="zipcode" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="city" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="area" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ecity" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="earea" Type="char" MaxLength="17" Nullable="false" />
+        </EntityType>
+        <EntityType Name="chart">
+          <Key>
+            <PropertyRef Name="chr_no" />
+          </Key>
+          <Property Name="chr_no" Type="int" Nullable="false" />
+          <Property Name="pt_name" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="ac_type" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="birth_date" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="sex" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="id_no" Type="char" MaxLength="10" />
+          <Property Name="add_city" Type="char" MaxLength="6" />
+          <Property Name="add_area" Type="char" MaxLength="3" />
+          <Property Name="add_road" Type="char" MaxLength="6" />
+          <Property Name="add_neb" Type="char" MaxLength="2" />
+          <Property Name="add_lane" Type="char" MaxLength="4" />
+          <Property Name="add_alley" Type="char" MaxLength="4" />
+          <Property Name="add_no" Type="char" MaxLength="4" />
+          <Property Name="add_no_desh" Type="char" MaxLength="4" />
+          <Property Name="add_floor" Type="char" MaxLength="3" />
+          <Property Name="add_floor_desh" Type="char" MaxLength="4" />
+          <Property Name="add_room" Type="char" MaxLength="10" />
+          <Property Name="zipcode" Type="char" MaxLength="3" />
+          <Property Name="cell_phone" Type="char" MaxLength="10" />
+          <Property Name="tel_no" Type="char" MaxLength="10" />
+          <Property Name="email" Type="char" MaxLength="40" />
+          <Property Name="mother_id_no" Type="char" MaxLength="10" />
+          <Property Name="last_opd_date" Type="char" MaxLength="7" />
+          <Property Name="first_opd_date" Type="char" MaxLength="7" />
+          <Property Name="last_health_date" Type="char" MaxLength="7" />
+          <Property Name="blood_type" Type="char" MaxLength="2" />
+          <Property Name="education" Type="char" MaxLength="2" />
+          <Property Name="married" Type="char" MaxLength="1" />
+          <Property Name="job" Type="char" MaxLength="20" />
+          <Property Name="pt_bh" Type="char" MaxLength="10" />
+          <Property Name="pt_bw" Type="char" MaxLength="10" />
+          <Property Name="pt_lmp" Type="char" MaxLength="7" />
+          <Property Name="sens_remark" Type="varchar" MaxLength="150" />
+          <Property Name="pt_remak" Type="varchar" MaxLength="150" />
+          <Property Name="pt_self_remark" Type="varchar" MaxLength="150" />
+          <Property Name="off_id" Type="char" MaxLength="3" />
+          <Property Name="ins_corp_code" Type="char" MaxLength="2" />
+          <Property Name="disc_code" Type="char" MaxLength="5" />
+          <Property Name="ic_address" Type="char" MaxLength="100" />
+          <Property Name="death_flag" Type="char" MaxLength="1" />
+          <Property Name="death_date" Type="char" MaxLength="10" />
+          <Property Name="home_care_type" Type="char" MaxLength="2" />
+          <Property Name="home_care_join_date" Type="char" MaxLength="7" />
+        </EntityType>
+        <EntityType Name="hosp_basic">
+          <Key>
+            <PropertyRef Name="hosp_ins_no" />
+          </Key>
+          <Property Name="hosp_ins_no" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="hosp_type" Type="char" MaxLength="10" />
+          <Property Name="hosp_name" Type="char" MaxLength="30" />
+          <Property Name="own_name" Type="char" MaxLength="12" />
+          <Property Name="own_id" Type="char" MaxLength="10" />
+          <Property Name="hosp_address" Type="char" MaxLength="50" />
+          <Property Name="hosp_tel" Type="char" MaxLength="10" />
+          <Property Name="hosp_fax" Type="char" MaxLength="10" />
+          <Property Name="license_qty" Type="int" />
+          <Property Name="pharm_code" Type="char" MaxLength="2" />
+          <Property Name="reg_fee_first" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="reg_fee" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="reg_fee_diag" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="med_out_flag" Type="char" MaxLength="1" />
+          <Property Name="rec_fee_type" Type="char" MaxLength="1" />
+          <Property Name="reg_type" Type="char" MaxLength="1" />
+          <Property Name="apply_type" Type="char" MaxLength="1" />
+          <Property Name="check_in_flag" Type="char" MaxLength="1" />
+          <Property Name="doc_med" Type="char" MaxLength="1" />
+          <Property Name="apply_card_type" Type="char" MaxLength="1" />
+          <Property Name="stock_flag" Type="char" MaxLength="1" />
+          <Property Name="ds_name" Type="char" MaxLength="20" />
+          <Property Name="ds_ins_code" Type="char" MaxLength="15" />
+          <Property Name="ds_own_name" Type="char" MaxLength="10" />
+          <Property Name="ds_own_id" Type="char" MaxLength="10" />
+          <Property Name="ds_address" Type="char" MaxLength="50" />
+          <Property Name="ds_tel" Type="char" MaxLength="10" />
+          <Property Name="ds_fax" Type="char" MaxLength="10" />
+          <Property Name="doc_login" Type="char" MaxLength="10" />
+          <Property Name="doc_pwd" Type="char" MaxLength="10" />
+          <Property Name="pharm_type" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'kn3534012062.dbo.road_basic' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="road_basic">
+          <Key>
+            <PropertyRef Name="road_no" />
+            <PropertyRef Name="road" />
+            <PropertyRef Name="zipcode" />
+            <PropertyRef Name="eroad" />
+            <PropertyRef Name="rkey" />
+          </Key>
+          <Property Name="road_no" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="road" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="zipcode" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="eroad" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="rkey" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_chart_chart">
+          <End Role="chart" Type="Self.chart" Multiplicity="1" />
+          <End Role="chart1" Type="Self.chart" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="chart">
+              <PropertyRef Name="chr_no" />
+            </Principal>
+            <Dependent Role="chart1">
+              <PropertyRef Name="chr_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="kn3534012062ModelStoreContainer">
+          <EntitySet Name="chart" EntityType="Self.chart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hosp_basic" EntityType="Self.hosp_basic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="area_basic" EntityType="Self.area_basic" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[area_basic].[cityarea] AS [cityarea], 
+[area_basic].[zipcode] AS [zipcode], 
+[area_basic].[city] AS [city], 
+[area_basic].[area] AS [area], 
+[area_basic].[ecity] AS [ecity], 
+[area_basic].[earea] AS [earea]
+FROM [dbo].[area_basic] AS [area_basic]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="road_basic" EntityType="Self.road_basic" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[road_basic].[road_no] AS [road_no], 
+[road_basic].[road] AS [road], 
+[road_basic].[zipcode] AS [zipcode], 
+[road_basic].[eroad] AS [eroad], 
+[road_basic].[rkey] AS [rkey]
+FROM [dbo].[road_basic] AS [road_basic]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_chart_chart" Association="Self.FK_chart_chart">
+            <End Role="chart" EntitySet="chart" />
+            <End Role="chart1" EntitySet="chart" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="kn3534012062Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="chart">
+          <Key>
+            <PropertyRef Name="chr_no" />
+          </Key>
+          <Property Name="chr_no" Type="Int32" Nullable="false" />
+          <Property Name="pt_name" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ac_type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="birth_date" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="sex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="id_no" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="add_city" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="add_area" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="add_road" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="add_neb" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="add_lane" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="add_alley" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="add_no" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="add_no_desh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="add_floor" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="add_floor_desh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="add_room" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="zipcode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="cell_phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="tel_no" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="mother_id_no" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="last_opd_date" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="first_opd_date" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="last_health_date" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="blood_type" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="education" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="married" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="job" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="pt_bh" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="pt_bw" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="pt_lmp" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="sens_remark" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="pt_remak" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="pt_self_remark" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="off_id" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="ins_corp_code" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="disc_code" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="ic_address" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="death_flag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="death_date" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="home_care_type" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="home_care_join_date" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="chart1" Relationship="Self.FK_chart_chart" FromRole="chart" ToRole="chart1" />
+          <NavigationProperty Name="chart2" Relationship="Self.FK_chart_chart" FromRole="chart1" ToRole="chart" />
+        </EntityType>
+        <EntityType Name="hosp_basic">
+          <Key>
+            <PropertyRef Name="hosp_ins_no" />
+          </Key>
+          <Property Name="hosp_ins_no" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="hosp_type" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="hosp_name" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="own_name" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="own_id" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="hosp_address" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="hosp_tel" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="hosp_fax" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="license_qty" Type="Int32" />
+          <Property Name="pharm_code" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="reg_fee_first" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="reg_fee" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="reg_fee_diag" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="med_out_flag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="rec_fee_type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="reg_type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="apply_type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="check_in_flag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="doc_med" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="apply_card_type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="stock_flag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ds_name" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="ds_ins_code" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="ds_own_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ds_own_id" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ds_address" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="ds_tel" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ds_fax" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="doc_login" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="doc_pwd" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="pharm_type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="area_basic">
+          <Key>
+            <PropertyRef Name="cityarea" />
+            <PropertyRef Name="zipcode" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="area" />
+            <PropertyRef Name="ecity" />
+            <PropertyRef Name="earea" />
+          </Key>
+          <Property Name="cityarea" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="zipcode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="area" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ecity" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="earea" Type="String" MaxLength="17" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="road_basic">
+          <Key>
+            <PropertyRef Name="road_no" />
+            <PropertyRef Name="road" />
+            <PropertyRef Name="zipcode" />
+            <PropertyRef Name="eroad" />
+            <PropertyRef Name="rkey" />
+          </Key>
+          <Property Name="road_no" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="road" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="zipcode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="eroad" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="rkey" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_chart_chart">
+          <End Role="chart" Type="Self.chart" Multiplicity="1" />
+          <End Role="chart1" Type="Self.chart" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="chart">
+              <PropertyRef Name="chr_no" />
+            </Principal>
+            <Dependent Role="chart1">
+              <PropertyRef Name="chr_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="knEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="chart" EntityType="Self.chart" />
+          <EntitySet Name="hosp_basic" EntityType="Self.hosp_basic" />
+          <EntitySet Name="area_basic" EntityType="Self.area_basic" />
+          <EntitySet Name="road_basic" EntityType="Self.road_basic" />
+          <AssociationSet Name="FK_chart_chart" Association="Self.FK_chart_chart">
+            <End Role="chart" EntitySet="chart" />
+            <End Role="chart1" EntitySet="chart" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="kn3534012062ModelStoreContainer" CdmEntityContainer="knEntities">
+          <EntitySetMapping Name="chart">
+            <EntityTypeMapping TypeName="kn3534012062Model.chart">
+              <MappingFragment StoreEntitySet="chart">
+                <ScalarProperty Name="chr_no" ColumnName="chr_no" />
+                <ScalarProperty Name="pt_name" ColumnName="pt_name" />
+                <ScalarProperty Name="ac_type" ColumnName="ac_type" />
+                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="id_no" ColumnName="id_no" />
+                <ScalarProperty Name="add_city" ColumnName="add_city" />
+                <ScalarProperty Name="add_area" ColumnName="add_area" />
+                <ScalarProperty Name="add_road" ColumnName="add_road" />
+                <ScalarProperty Name="add_neb" ColumnName="add_neb" />
+                <ScalarProperty Name="add_lane" ColumnName="add_lane" />
+                <ScalarProperty Name="add_alley" ColumnName="add_alley" />
+                <ScalarProperty Name="add_no" ColumnName="add_no" />
+                <ScalarProperty Name="add_no_desh" ColumnName="add_no_desh" />
+                <ScalarProperty Name="add_floor" ColumnName="add_floor" />
+                <ScalarProperty Name="add_floor_desh" ColumnName="add_floor_desh" />
+                <ScalarProperty Name="add_room" ColumnName="add_room" />
+                <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+                <ScalarProperty Name="cell_phone" ColumnName="cell_phone" />
+                <ScalarProperty Name="tel_no" ColumnName="tel_no" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mother_id_no" ColumnName="mother_id_no" />
+                <ScalarProperty Name="last_opd_date" ColumnName="last_opd_date" />
+                <ScalarProperty Name="first_opd_date" ColumnName="first_opd_date" />
+                <ScalarProperty Name="last_health_date" ColumnName="last_health_date" />
+                <ScalarProperty Name="blood_type" ColumnName="blood_type" />
+                <ScalarProperty Name="education" ColumnName="education" />
+                <ScalarProperty Name="married" ColumnName="married" />
+                <ScalarProperty Name="job" ColumnName="job" />
+                <ScalarProperty Name="pt_bh" ColumnName="pt_bh" />
+                <ScalarProperty Name="pt_bw" ColumnName="pt_bw" />
+                <ScalarProperty Name="pt_lmp" ColumnName="pt_lmp" />
+                <ScalarProperty Name="sens_remark" ColumnName="sens_remark" />
+                <ScalarProperty Name="pt_remak" ColumnName="pt_remak" />
+                <ScalarProperty Name="pt_self_remark" ColumnName="pt_self_remark" />
+                <ScalarProperty Name="off_id" ColumnName="off_id" />
+                <ScalarProperty Name="ins_corp_code" ColumnName="ins_corp_code" />
+                <ScalarProperty Name="disc_code" ColumnName="disc_code" />
+                <ScalarProperty Name="ic_address" ColumnName="ic_address" />
+                <ScalarProperty Name="death_flag" ColumnName="death_flag" />
+                <ScalarProperty Name="death_date" ColumnName="death_date" />
+                <ScalarProperty Name="home_care_type" ColumnName="home_care_type" />
+                <ScalarProperty Name="home_care_join_date" ColumnName="home_care_join_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hosp_basic">
+            <EntityTypeMapping TypeName="kn3534012062Model.hosp_basic">
+              <MappingFragment StoreEntitySet="hosp_basic">
+                <ScalarProperty Name="hosp_ins_no" ColumnName="hosp_ins_no" />
+                <ScalarProperty Name="hosp_type" ColumnName="hosp_type" />
+                <ScalarProperty Name="hosp_name" ColumnName="hosp_name" />
+                <ScalarProperty Name="own_name" ColumnName="own_name" />
+                <ScalarProperty Name="own_id" ColumnName="own_id" />
+                <ScalarProperty Name="hosp_address" ColumnName="hosp_address" />
+                <ScalarProperty Name="hosp_tel" ColumnName="hosp_tel" />
+                <ScalarProperty Name="hosp_fax" ColumnName="hosp_fax" />
+                <ScalarProperty Name="license_qty" ColumnName="license_qty" />
+                <ScalarProperty Name="pharm_code" ColumnName="pharm_code" />
+                <ScalarProperty Name="reg_fee_first" ColumnName="reg_fee_first" />
+                <ScalarProperty Name="reg_fee" ColumnName="reg_fee" />
+                <ScalarProperty Name="reg_fee_diag" ColumnName="reg_fee_diag" />
+                <ScalarProperty Name="med_out_flag" ColumnName="med_out_flag" />
+                <ScalarProperty Name="rec_fee_type" ColumnName="rec_fee_type" />
+                <ScalarProperty Name="reg_type" ColumnName="reg_type" />
+                <ScalarProperty Name="apply_type" ColumnName="apply_type" />
+                <ScalarProperty Name="check_in_flag" ColumnName="check_in_flag" />
+                <ScalarProperty Name="doc_med" ColumnName="doc_med" />
+                <ScalarProperty Name="apply_card_type" ColumnName="apply_card_type" />
+                <ScalarProperty Name="stock_flag" ColumnName="stock_flag" />
+                <ScalarProperty Name="ds_name" ColumnName="ds_name" />
+                <ScalarProperty Name="ds_ins_code" ColumnName="ds_ins_code" />
+                <ScalarProperty Name="ds_own_name" ColumnName="ds_own_name" />
+                <ScalarProperty Name="ds_own_id" ColumnName="ds_own_id" />
+                <ScalarProperty Name="ds_address" ColumnName="ds_address" />
+                <ScalarProperty Name="ds_tel" ColumnName="ds_tel" />
+                <ScalarProperty Name="ds_fax" ColumnName="ds_fax" />
+                <ScalarProperty Name="doc_login" ColumnName="doc_login" />
+                <ScalarProperty Name="doc_pwd" ColumnName="doc_pwd" />
+                <ScalarProperty Name="pharm_type" ColumnName="pharm_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="area_basic">
+            <EntityTypeMapping TypeName="kn3534012062Model.area_basic">
+              <MappingFragment StoreEntitySet="area_basic">
+                <ScalarProperty Name="cityarea" ColumnName="cityarea" />
+                <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="ecity" ColumnName="ecity" />
+                <ScalarProperty Name="earea" ColumnName="earea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="road_basic">
+            <EntityTypeMapping TypeName="kn3534012062Model.road_basic">
+              <MappingFragment StoreEntitySet="road_basic">
+                <ScalarProperty Name="road_no" ColumnName="road_no" />
+                <ScalarProperty Name="road" ColumnName="road" />
+                <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+                <ScalarProperty Name="eroad" ColumnName="eroad" />
+                <ScalarProperty Name="rkey" ColumnName="rkey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
